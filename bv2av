@@ -1,0 +1,13 @@
+def bv2av(bv):
+    bv = str(bv)
+    r = 0
+    alphabet = "fZodR9XQDSUm21yCkr6zBqiveYah8bt4xsWpHnJE7jL5VG3guMTKNPAwcF"
+    for i, v in enumerate([11, 10, 3, 8, 4, 6]):
+        r += alphabet.find(bv[v]) * 58 ** i
+    return str((r - 0x2_0840_07c0) ^ 0x0a93_b324)
+
+if __name__ == '__main__':
+
+#输入bv号码即可得出av号码
+    av = bv2av('BV1i54y1e74F')
+    print('av' + av)
